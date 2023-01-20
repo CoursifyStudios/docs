@@ -22,6 +22,7 @@ const config: DocsThemeConfig = {
     const { asPath } = useRouter()
     const { frontMatter } = useConfig()
     return <>
+      <meta property="og:title" content="Karasu"/>
       <meta property="og:url" content={`https://my-app.com${asPath}`} />
       <meta property="og:title" content={frontMatter.title || 'Karasu'} />
       <meta property="og:description" content={frontMatter.description || 'A next generation LMS'} />
@@ -30,7 +31,7 @@ const config: DocsThemeConfig = {
   project: {
     link: "https://github.com/CoursifyStudios",
   },
-  docsRepositoryBase: "https://github.com/shuding/nextra-docs-template",
+  docsRepositoryBase: "https://github.com/CoursifyStudios/docs/blob/main/",
   footer: {
     text: <span>
       © {new Date().getFullYear()}  <a href="https://coursify.studio" target="_blank">Coursify Studios.</a>
