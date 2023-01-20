@@ -1,5 +1,6 @@
 import React from "react";
-import { DocsThemeConfig } from "nextra-theme-docs";
+import { DocsThemeConfig, useConfig } from "nextra-theme-docs";
+import { useRouter } from "next/router";
 
 const config: DocsThemeConfig = {
   logo: (
@@ -17,12 +18,27 @@ const config: DocsThemeConfig = {
       <span style={{ marginLeft: ".4em", fontWeight: 600 }}>Karasu</span>
     </>
   ),
+  head: () => {
+    const { asPath } = useRouter()
+    const { frontMatter } = useConfig()
+    return <>
+      <meta property="og:url" content={`https://my-app.com${asPath}`} />
+      <meta property="og:title" content={frontMatter.title || 'Karasu'} />
+      <meta property="og:description" content={frontMatter.description || 'A next generation LMS'} />
+    </>
+  },
   project: {
     link: "https://github.com/CoursifyStudios",
   },
   docsRepositoryBase: "https://github.com/shuding/nextra-docs-template",
   footer: {
-    text: "© 2023 Coursify Studios. All rights reserved.",
+    text: <span>
+      © {new Date().getFullYear()}  <a href="https://coursify.studio" target="_blank">Coursify Studios.</a>
+    </span>,
+  },
+  navigation: {
+    prev: true,
+    next: true
   },
 };
 
