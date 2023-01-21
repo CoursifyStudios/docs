@@ -1,16 +1,19 @@
 {
   "index": "Introduction",
-  
+
   "line": {
     "type": "separator"
   },
+  "systems": "Systems",
   "about":
   {
     "title": "About",
-    "type": "page"
-  },
-  "---": {
-    "type": "separator",
-    "title": "Schedules"
+    "type": "page",
+    "theme": {
+      "typesetting": "article",
+      "sidebar": false,
+      "toc": false,
+      "breadcrumb": false
+    }
   }
 }
