@@ -5,8 +5,7 @@
     "type": "separator"
   },
   "systems": "Systems",
-  "about":
-  {
+  "about": {
     "title": "About",
     "type": "page",
     "theme": {
